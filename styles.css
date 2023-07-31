@@ -2,6 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
 }
 
 header {
@@ -20,9 +21,12 @@ nav a {
 }
 
 #hero {
-    background-color: #f2f2f2;
-    padding: 20px;
+    background-image: url('hero-bg.jpg');
+    background-size: cover;
+    color: white;
+    padding: 100px 20px;
     text-align: center;
+    animation: fadeIn 2s;
 }
 
 #products, #about, #contact {
@@ -40,6 +44,7 @@ nav a {
     padding: 10px;
     margin: 10px;
     width: 200px;
+    animation: slideUp 1s;
 }
 
 footer {
@@ -47,4 +52,23 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    #product-list {
+        flex-direction: column;
+        align-items: center;
+    }
 }
